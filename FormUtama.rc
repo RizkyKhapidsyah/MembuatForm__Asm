@@ -1,0 +1,31 @@
+// Created with Visual MASM
+
+#include "\masm32\include\resource.h"
+1  24  DISCARDABLE	"C:\\Program Files (x86)\\Visual MASM\\Projects\\MembuatForm\\Manifest.xml"
+
+#define LabelNama 1000
+#define LabelUmur 1001
+#define LabelAlamat 1002
+#define InputTextNama 1003
+#define TextUmur 1004
+#define TextAlamat 1005
+#define ButtonSimpan 1006
+#define ButtonKeluar 1007
+#define CheckBoxOverwrite 1008
+
+DesignForm_3_3 DIALOGEX 0, 0, 200, 96
+STYLE  WS_CAPTION | WS_SIZEBOX | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP
+CAPTION "DesignForm"
+CLASS "DLGCLASS"
+FONT 8, "Tahoma"
+{
+   LTEXT "Nama", LabelNama, 5, 5, 18, 8
+   LTEXT "Umur", LabelUmur, 5, 20, 17, 8
+   LTEXT "Alamat", LabelAlamat, 5, 34, 22, 8
+   EDITTEXT InputTextNama, 48, 5, 141, 13
+   EDITTEXT TextUmur, 48, 20, 141, 13
+   EDITTEXT TextAlamat, 48, 34, 141, 13
+   PUSHBUTTON "Simpan", ButtonSimpan, 139, 74, 50, 15, BS_PUSHBUTTON | BS_CENTER 
+   PUSHBUTTON "Keluar", ButtonKeluar, 86, 74, 50, 15, BS_PUSHBUTTON | BS_CENTER 
+   CHECKBOX "OverWrite", CheckBoxOverwrite, 48, 54, 65, 10
+}

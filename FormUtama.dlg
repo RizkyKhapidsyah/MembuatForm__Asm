@@ -1,0 +1,84 @@
+object DesignForm_3_3: TForm
+  Left = 0
+  Top = 0
+  Align = alClient
+  Caption = 'DesignForm'
+  ClientHeight = 156
+  ClientWidth = 297
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object LabelNama: TLabel
+    Left = 8
+    Top = 8
+    Width = 27
+    Height = 13
+    Caption = 'Nama'
+  end
+  object LabelUmur: TLabel
+    Left = 8
+    Top = 32
+    Width = 25
+    Height = 13
+    Caption = 'Umur'
+  end
+  object LabelAlamat: TLabel
+    Left = 8
+    Top = 56
+    Width = 33
+    Height = 13
+    Caption = 'Alamat'
+  end
+  object InputTextNama: TEdit
+    Left = 72
+    Top = 8
+    Width = 209
+    Height = 21
+    TabOrder = 0
+  end
+  object TextUmur: TEdit
+    Left = 72
+    Top = 32
+    Width = 209
+    Height = 21
+    TabOrder = 1
+  end
+  object TextAlamat: TEdit
+    Left = 72
+    Top = 56
+    Width = 209
+    Height = 21
+    TabOrder = 2
+  end
+  object ButtonSimpan: TButton
+    Left = 206
+    Top = 120
+    Width = 75
+    Height = 25
+    Caption = 'Simpan'
+    TabOrder = 3
+    OnClick = ButtonSimpanClick
+  end
+  object ButtonKeluar: TButton
+    Left = 128
+    Top = 120
+    Width = 75
+    Height = 25
+    Caption = 'Keluar'
+    TabOrder = 4
+  end
+  object CheckBoxOverwrite: TCheckBox
+    Left = 72
+    Top = 88
+    Width = 97
+    Height = 17
+    Caption = 'OverWrite'
+    TabOrder = 5
+  end
+end
