@@ -27,46 +27,46 @@ includelib \masm32\lib\kernel32.lib
  
 start: 
 	invoke	GetModuleHandle, NULL 
-	mov		hInstance,eax 
+	mov	hInstance,eax 
 	invoke	GetCommandLine
-	mov		CommandLine,eax 
-	invoke	WinMain, hInstance,NULL,CommandLine, SW_SHOWDEFAULT 
+	mov	CommandLine,eax 
+	invoke	WinMain, hInstance, NULL, CommandLine, SW_SHOWDEFAULT 
 	invoke	ExitProcess,eax
 	 
-WinMain	proc hInst:HINSTANCE,hPrevInst:HINSTANCE,CmdLine:LPSTR,CmdShow:DWORD 
+WinMain	proc hInst:HINSTANCE, hPrevInst:HINSTANCE, CmdLine:LPSTR, CmdShow:DWORD 
 
 	LOCAL	wc:WNDCLASSEX 
 	LOCAL	msg:MSG 
 	LOCAL	hDlg:HWND
 
-	mov		wc.cbSize,SIZEOF WNDCLASSEX 
-	mov		wc.style, CS_HREDRAW or CS_VREDRAW 
-	mov		wc.lpfnWndProc, OFFSET WndProc 
-	mov		wc.cbClsExtra,NULL 
-	mov		wc.cbWndExtra,DLGWINDOWEXTRA 
+	mov	wc.cbSize, SIZEOF WNDCLASSEX 
+	mov	wc.style, CS_HREDRAW or CS_VREDRAW 
+	mov	wc.lpfnWndProc, OFFSET WndProc 
+	mov	wc.cbClsExtra, NULL 
+	mov	wc.cbWndExtra, DLGWINDOWEXTRA 
 	push	hInst 
-	pop		wc.hInstance 
-	mov		wc.hbrBackground,COLOR_BTNFACE+1 
-	mov		wc.lpszMenuName,OFFSET MenuName 
-	mov		wc.lpszClassName,OFFSET ClassName 
-	invoke	LoadIcon,NULL,IDI_APPLICATION 
-	mov		wc.hIcon,eax 
-	mov		wc.hIconSm,eax 
-	invoke	LoadCursor,NULL,IDC_ARROW 
-	mov		wc.hCursor,eax
+	pop	wc.hInstance 
+	mov	wc.hbrBackground, COLOR_BTNFACE+1 
+	mov	wc.lpszMenuName, OFFSET MenuName 
+	mov	wc.lpszClassName, OFFSET ClassName 
+	invoke	LoadIcon, NULL, IDI_APPLICATION 
+	mov	wc.hIcon, eax 
+	mov	wc.hIconSm, eax 
+	invoke	LoadCursor, NULL, IDC_ARROW 
+	mov	wc.hCursor, eax
 	
 	invoke	RegisterClassEx, addr wc
 	invoke	CreateDialogParam, hInstance, ADDR DlgName, NULL, NULL, NULL
 	 
 	mov hDlg, eax 
-	invoke	ShowWindow, hDlg,SW_SHOWNORMAL
+	invoke	ShowWindow, hDlg, SW_SHOWNORMAL
 	invoke	UpdateWindow, hDlg
 	
 	.WHILE TRUE 
-		invoke GetMessage, ADDR msg,NULL,0,0 
+		invoke GetMessage, ADDR msg, NULL, 0, 0 
 		.BREAK .IF (!eax) 
 		invoke IsDialogMessage, hDlg, ADDR msg 
-		.IF eax ==FALSE 
+		.IF eax == FALSE 
 			invoke TranslateMessage, ADDR msg 
 			invoke DispatchMessage, ADDR msg 
 		.ENDIF 
