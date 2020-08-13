@@ -1,6 +1,6 @@
-.386			; Enable 80386+ instruction set
-.model flat, stdcall	; Flat, 32-bit memory model (not used in 64-bit)
-option casemap: none	; Case sensitive syntax
+.386			
+.model flat, stdcall	
+option casemap: none	
 
 WndProc proto :DWORD,:DWORD,:DWORD,:DWORD
 WinMain proto :DWORD,:DWORD,:DWORD,:DWORD 
