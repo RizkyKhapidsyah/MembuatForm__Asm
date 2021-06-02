@@ -75,4 +75,4 @@ WinMain	proc hInst:HINSTANCE, hPrevInst:HINSTANCE, CmdLine:LPSTR, CmdShow:DWORD
 	ret 
 WinMain endp 
 
-end start f
+end start
